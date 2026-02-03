@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Моряков Андрей — Senior .NET Developer</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: #1a1a1a;
+    background: #f5f5f5;
+    line-height: 1.6;
+    padding: 2rem 1rem;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.06);
+    padding: 3rem 3.5rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #111;
+    margin-bottom: 0.25rem;
+  }
+
+  h1 + p {
+    font-size: 1.05rem;
+    color: #555;
+    font-weight: 500;
+    margin-bottom: 1.25rem;
+  }
+
+  .header {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+
+  .header-photo {
+    flex-shrink: 0;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+    border: 3px solid #e5e5e5;
+  }
+
+  .header-info {
+    flex: 1;
+  }
+
+  .header-info h1 {
+    margin-top: 0;
+  }
+
+  @media (max-width: 600px) {
+    .header {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .header-photo {
+      width: 120px;
+      height: 120px;
+    }
+  }
+
+  .contacts {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    padding: 0;
+    margin-bottom: 0;
+  }
+
+  .contacts li {
+    font-size: 0.875rem;
+    color: #444;
+  }
+
+  .contacts strong {
+    color: #222;
+    font-weight: 600;
+  }
+
+  a {
+    color: #2563eb;
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  a:hover {
+    color: #1d4ed8;
+    text-decoration: underline;
+  }
+
+  hr {
+    border: none;
+    height: 1px;
+    background: #e5e5e5;
+    margin: 2rem 0;
+  }
+
+  h2 {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #2563eb;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #2563eb;
+    display: inline-block;
+  }
+
+  h2::after {
+    content: '';
+    display: block;
+  }
+
+  .section > h2 {
+    display: block;
+    border-bottom: none;
+    padding-bottom: 0;
+    position: relative;
+  }
+
+  .section > h2::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, #2563eb 120px, #e5e5e5 120px);
+    margin-top: 0.4rem;
+  }
+
+  h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 0.2rem;
+  }
+
+  .period {
+    font-size: 0.85rem;
+    color: #888;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .project-note {
+    font-size: 0.925rem;
+    color: #444;
+    margin-bottom: 0.75rem;
+  }
+
+  p {
+    margin-bottom: 0.75rem;
+    color: #333;
+  }
+
+  ul {
+    padding-left: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  li {
+    margin-bottom: 0.4rem;
+    color: #333;
+  }
+
+  li::marker {
+    color: #2563eb;
+  }
+
+  li strong {
+    color: #111;
+    font-weight: 600;
+  }
+
+  .job {
+    margin-bottom: 2rem;
+  }
+
+  .job:last-child {
+    margin-bottom: 0;
+  }
+
+  .skills-grid {
+    list-style: none;
+    padding: 0;
+  }
+
+  .skills-grid li {
+    padding: 0.35rem 0;
+    border-bottom: 1px solid #f0f0f0;
+    margin-bottom: 0;
+  }
+
+  .skills-grid li:last-child {
+    border-bottom: none;
+  }
+
+  .tag {
+    display: inline-block;
+    background: #eff6ff;
+    color: #2563eb;
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 0.15rem 0.55rem;
+    border-radius: 4px;
+    margin-right: 0.25rem;
+  }
+
+  .profile p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .education-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .education-list li {
+    padding: 0.4rem 0;
+  }
+
+  @media print {
+    body {
+      background: #fff;
+      padding: 0;
+    }
+    .container {
+      box-shadow: none;
+      border-radius: 0;
+      padding: 1.5rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .container {
+      padding: 1.5rem 1.25rem;
+    }
+    h1 {
+      font-size: 1.6rem;
+    }
+    .contacts {
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <img src="photo_2026-02-03_16-29-34.jpg" alt="Моряков Андрей" class="header-photo">
+    <div class="header-info">
+      <h1>МОРЯКОВ АНДРЕЙ</h1>
+      <p><strong>Senior .NET Developer | AI-Augmented Engineer</strong></p>
+
+      <ul class="contacts">
+        <li><strong>Локация:</strong> Россия (Удаленно)</li>
+        <li><strong>Telegram:</strong> <a href="https://t.me/AndrewM_Workflow">@Andrew_Moryakov</a></li>
+        <li><strong>Email:</strong> <a href="mailto:andrewmoryakov@gmail.com">andrewmoryakov@gmail.com</a></li>
+        <li><strong>Оформление:</strong> ИП, ТК РФ, ГПХ</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="section profile">
+    <h2>ПРОФИЛЬ</h2>
+    <p>Senior .NET разработчик с 9+ годами коммерческого опыта в финтехе, банковских системах, системной интеграции и автоматизации бизнес-процессов.</p>
+    <p>Основной опыт в модульных монолитах, поддержка и развитие бизнес-критичных систем, где важны надёжность, предсказуемость и аккуратные изменения без регрессий. Опыт в базовой оптимизации баз данных(индексы, дефрагментация, планы), проектировании отказоустойчивых интеграций.</p>
+    <p>Применяю <b>AI-инструменты</b> <strong>(Cursor, Claude, Codex Auto Claude, Code Alive, MCP)</strong> как инженерный усилитель.</p>
+    <p>Сейчас изучаю и развиваю компетенции в распределенных системах, шинах данных: отрабатываю паттерны надежности (idempotency, retry, DLQ, outbox) на прикладных прототипах и смотрю как могу внедрить их в текущие проекты.</p>
+  </div>
+
+  <hr>
+
+  <div class="section">
+    <h2>КЛЮЧЕВЫЕ НАВЫКИ</h2>
+    <ul class="skills-grid">
+      <li><strong>Backend:</strong> C#, .NET Framework 4.x, .NET Core 3.1, .NET 6/8.</li>
+	  <li><strong>Frontend:</strong> Vue.js</li>
+      <li><strong>Web &amp; Integration:</strong> ASP.NET MVC/WebAPI, WCF, HTTP(S), проектирование контрактов.</li>
+      <li><strong>Data:</strong> MS SQL Server (оптимизация запросов, анализ планов выполнения, индексация, транзакционная целостность), PostgreSQL.</li>
+      <li><strong>Messaging:</strong> RabbitMQ (базовая(!) практика в личных проектах: retry-пакеты, DLQ, идемпотентность), Kafka (концептуальное понимание).</li>
+      <li><strong>Architecture:</strong> Рефакторинг legacy-систем, декомпозиция монолитов, снижение связности модулей, event-driven архитектура.</li>
+      <li><strong>Tools:</strong> Postman, Fiddler, Git, базовые конфигурации: Docker, nginx/caddy, CI/CD (GitLab/TeamCity пользовательский уровень).</li>
+      <li><strong>AI Stack:</strong> Prompt engineering, MCP (в т.ч. разработка своих), RAG-подходы, внедрение LLM как прикладного компонента в пайплайны.</li>
+      <li><strong>Локальный инференс:</strong> настройка параметров и оптимизация под конкретное железо (скорость/память/параллельность/контекст).</li>
+      <li><strong>CPV (Controlled, Predictable, Verifiable AI-Driven Development):</strong> спецификация и декомпозиция, контракты и критерии приёмки, построение фаз реализации, делегирование реализации LLM инструментам, верификация, доведение до production-ready, документирование.</li>
+    </ul>
+  </div>
+
+  <hr>
+
+  <div class="section">
+    <h2>ОПЫТ РАБОТЫ</h2>
+
+    <div class="job">
+      <h3>Проектная практика: Автоматизация рекрутингового сервиса</h3>
+      <span class="period">Ноябрь 2025 — настоящее время</span>
+      <p class="project-note">Разработка комплексного backend-решения (.NET 8) для управления воронкой кандидатов и интеллектуального анализа документов.</p>
+      <ul>
+        <li><strong>Умный поиск по внутренней документации (RAG):</strong> Реализовал семантический поиск по внутренним базам резюме и внутренней документации. Настроил пайплайн (Chunking, векторизация, re-ranking) для получения более релевантных результатов при поиске пользователями. Получили не просто поиск по словам, а поиск по смыслу. Например: «найди тех, кто работал с хайлоад системами на C#»</li>
+        <li><strong>Автоматический скрининг (LLM Middleware):</strong> LLM как часть пайплайна для извлечения атрибутов (навыки, опыт, и т.д.) из неструктурированных заявок, документации. Создан конвейер классификации и извлечения сущностей из заявок. Система автоматически преобразует неструктурированный текст в строго валидированные JSON-данные. Результат: сокращение времени разбора анкеты в среднем с 15 до 5 минут.</li>
+        <li><strong>Локальная AI-инфраструктура:</strong> Развернул квантованные модели на инфраструктуре заказчика для сохранения персональных данных. Оптимизировал параметры инференса, библиотеки ik_llama под железо, стремился к удовлетворительному latency при многопоточном обращении к LLM.</li>
+        <li><strong>Методология разработки (CPV-AI-D):</strong> Использовал процесс контролируемой верификации AI-кода (декомпозиция, поиск альтернатив, опровержения гипотез, тесты, валидация архитектуры, моделирование поведения). Результат: увеличение скорости поставки фич при сохранении стабильности, уменьшение регрессий.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <h3>ПАО «Промсвязьбанк» | Senior .NET Developer</h3>
+      <span class="period">Декабрь 2023 — Октябрь 2025</span>
+      <p class="project-note"><strong>Проект:</strong> Развитие ядра системы розничных процессов (Retail Monolith, MS SQL).</p>
+      <ul>
+	  <li>Реализация новых страховых продуктов в рамках PSB Retail. Доработка процессов в пользовательском АРМ</li>
+        <li>Проводил анализ планов выполнения и оптимизацию «тяжелых» запросов.</li>
+        <li> Реализовал архитектурные изменения в критическом контуре без нарушения обратной совместимости и регрессий.</li>
+        <li> Локализовал и устранял дефекты бизнес-логики на 3-й линии поддержки.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <h3>iFellow | Senior .NET Developer</h3>
+      <span class="period">Апрель 2021 — Декабрь 2023</span>
+      <p class="project-note"><strong>Проект:</strong> Финтех-решения и ERP-системы.</p>
+      <ul>
+        <li>Спроектировал и реализовал «с нуля» сервис аренды (backend, доменная модель).</li>
+        <li>Разработал модули учета и аналитики для ритейла (складские остатки, бухгалтерские сущности, графики).</li>
+        <li>Разрабатывал серверную логику для партнерских интеграционных сервисов.</li>
+		<li>Аутсорсинговая поддержка в рамках iFellow проектов Alioth.</li>
+      </ul>
+	 
+    </div>
+
+    <div class="job">
+      <h3>Alioth / SconeTech | .NET Developer</h3>
+      <span class="period">Август 2017 — Апрель 2021</span>
+      <p class="project-note"><strong>Проект:</strong> Система полного цикла персонализации банковских карт.</p>
+      <ul>
+        <li>Замена нестабильные, хрупких WCF-callback на механизм синхронизации через состояния в БД(и абстракции поверх для управления, контроля, повторяемости) снизил связанность модулей.</li>
+        <li>Разработал механизм безопасной работы с шифрованием базы в обход ограничений EF6 и MSSQL 2012.</li>
+        <li>Создал внутренний фреймворк, который сокращает время реализации нового проекта с нескольких дней в среднем до одного.</li>
+        <li>Обеспечил обработку потоков данных (SFTP/HTTPS) до сотен тысяч записей за сессию.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <h3>RCBI | .NET Developer</h3>
+      <span class="period">Август 2016 — Июнь 2017</span>
+      <ul>
+        <li>Командная разработка MES-систем для производства. Участие в пусконаладочных работах на инфраструктуре заказчика.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <h3>EPAM Systems | .NET Developer</h3>
+      <span class="period">Май 2016 — Август 2016</span>
+      <ul>
+        <li>Разработка внутреннего WPF-приложения для автоматизации рекрутинга.</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="section">
+    <h2>ОБРАЗОВАНИЕ</h2>
+    <ul class="education-list">
+      <li><strong>2015:</strong> Бакалавр, «Программная инженерия» — Владимирский государственный университет (Диплом с отличием).</li>
+      <li><strong>Английский:</strong> B1 (Intermediate).</li>
+    </ul>
+  </div>
+
+  <hr>
+
+  <div class="section">
+    <h2>ДОПОЛНИТЕЛЬНО</h2>
+    <ul class="education-list">
+      <li>Дисциплина: Воркаут, зимнее закаливание. Регулярный спорт помогает поддерживать высокую когнитивную нагрузку.</li>
+    </ul>
+  </div>
+
+</div>
+</body>
+</html>
